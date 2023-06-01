@@ -9,10 +9,10 @@
  * > sayHello("codeup") // returns "Hello, codeup!"
  */
 function sayHello(name){
-    console.log("Hello " + name)
+    return `Hello ${name}`;
 }
-
-sayHello("Enrique");
+const message = sayHello('Ava');
+console.log(message);
 /**
  * TODO:
  * Call the function 'sayHello' and pass your name as a string literal argument.
@@ -20,7 +20,7 @@ sayHello("Enrique");
  *
  * console.log 'helloMessage' to check your work
  */
-const helloMessage = sayHello("Ava");
+const helloMessage = sayHello("Timmy");
 console.log(helloMessage);
 /**
  * TODO:
@@ -70,10 +70,9 @@ console.log(random);
  * > calculateTip(0.25, 25.50) // returns 6.375
  * > calculateTip(0.15, 33.42) // returns 5.013
  */
-function calculateTip(percent, total){
-    return (percent * .01) * total;
+function calculateTip(tipPercent, mealTotal){
+    return (tipPercent * .01) * mealTotal;
 }
-
 /**
  * TODO:
  * Use prompt and alert in combination with your calculateTip function to
@@ -81,10 +80,15 @@ function calculateTip(percent, total){
  * then display the dollar amount they should tip
  */
 
-const percent = prompt('What percent do you want to tip?');
-const total = prompt('What was the total of your meal?');
-const tip = calculateTip(percent, total);
+const tipPercent = prompt('What percent do you want to tip?');
+console.log(tipPercent + '%');
+
+const mealTotal = prompt('What was the total of your meal?');
+console.log('$' + mealTotal);
+
+const tip = calculateTip(tipPercent, mealTotal);
 alert('This is how much you should tip: $' + tip);
+console.log('$' + tip);
 
 /**
  * TODO:
@@ -103,6 +107,12 @@ alert('This is how much you should tip: $' + tip);
 function applyDiscount(originalPrice, discountPercentage){
     return originalPrice - ((discountPercentage * .01) * originalPrice);
 }
+const originalPrice = prompt('What is the original price of the product?');
+console.log('$' + originalPrice);
 
-const price = applyDiscount(78,20);
-console.log('$' + price);
+const discountPercentage = prompt('What is the sale \(Percentage\)');
+console.log(discountPercentage + '%');
+
+const salePrice = applyDiscount(originalPrice, discountPercentage);
+alert('This is the price of the product with the discount added: $' + salePrice);
+console.log('$' + salePrice);
