@@ -21,25 +21,27 @@
  * Test your function by passing various string literals to it and
  * console.logging the function's return value
  */
-// const colorName = prompt('What is the first color that comes to mind?');
+//
 // function analyzeColor(colorName){
 //     if(colorName === 'red'){
-//         console.log('Bell peppers can be red.');
+//         return 'Bell peppers can be red.';
 //     } else if(colorName === 'orange'){
-//         console.log('Whataburger is orange.');
+//         return 'Whataburger is orange.';
 //     } else if(colorName === 'yellow'){
-//         console.log('Lemons are yellow');
+//         return 'Lemons are yellow';
 //     } else if(colorName === 'green') {
-//         console.log('Brussels sprouts are green.');
+//         return 'Brussels sprouts are green.';
 //     } else if(colorName === 'blue') {
-//         console.log('Jolly Ranchers can be blue.');
+//         return 'Jolly Ranchers can be blue.';
 //     } else if(colorName === 'purple'){
-//         console.log('Plums are purple.');
+//         return 'Plums are purple.';
 //     } else{
-//         console.log('I don\'t know anything about ' + colorName);
+//         return 'I don\'t know anything about ' + colorName;
 //     }
 // }
-// analyzeColor(colorName);
+//
+// console.log(analyzeColor("red"));
+
 // Don't change the next two lines!
 // These lines create two variables for you:
 // - `colors`: a list of the colors of the rainbow
@@ -57,30 +59,24 @@
  * TODO:
  * Comment out the code above, and refactor your function to use a switch-case statement
  */
-// const analyzeColor = prompt('What is the first color that comes to mind?')
-// switch(analyzeColor) {
+// const analyzeColor = (colorName) => {
+// switch(colorName) {
 //     case "red":
-//         console.log('Bell peppers can be red.');
-//         break;
+//         return 'Bell peppers can be red.';
 //     case "orange":
-//         console.log('Carrots are orange.');
-//         break;
+//         return 'Carrots are orange.';
 //     case "yellow":
-//         console.log('Lemons are yellow.');
-//         break;
+//         return 'Lemons are yellow.';
 //     case "green":
-//         console.log('Brussels sprouts are green.');
-//         break;
+//         return 'Brussels sprouts are green.';
 //     case "blue":
-//         console.log('Jolly Ranchers can be blue.');
-//         break;
+//         return 'Jolly Ranchers can be blue.';
 //     case "purple":
-//         console.log('Plums are purple.');
-//         break;
+//         return 'Plums are purple.';
 //     default:
-//         console.log('I don\'t know anything about ' + analyzeColor);
-//         break;
+//         return 'I don\'t know anything about ' + analyzeColor;
 // }
+// console.log(analyzeColor(randomColor));
 /**
  * TODO:
  * Prompt the user for a color when the page loads, and pass the input from the
@@ -142,7 +138,7 @@ switch(analyzeColor) {
 //     } else if(luckyNumber === 4){
 //         return totalAmount - (totalAmount * 0.50);
 //     } else if(luckyNumber === 5){
-//         console.log("It's on us!");
+//         return "It's on us!";
 //     } else{
 //         return totalAmount;
 //     }
@@ -183,8 +179,6 @@ alert(`Your bill before the discount: $${totalAmount.toFixed(2)}`);
 
 if(typeof totalAfterDiscount === 'number') {
     alert(`Your bill after the discount: $${totalAfterDiscount.toFixed(2)}`);
-} else if(totalAfterDiscount === totalAmount){
-    alert(`You did not win. Your total is: $${totalAmount.toFixed(2)}`);
 } else{
     alert("It's on us!");
 }
@@ -206,23 +200,59 @@ if(typeof totalAfterDiscount === 'number') {
  * Can you refactor your code to use functions?
  * HINT: The way we prompt for a value could be improved
  */
+
+// create a function that takes in a number and alerts whether it is odd or even
 const enterNumber = confirm("Would you like to enter a number?");
-if(enterNumber === true){
+if(enterNumber === true) {
+    function evenOrOdd(number) {
+        if (number % 2 === 0) {
+            alert("Your number is even.");
+        } else {
+            alert("Your number is odd.");
+        }
+    }
+
     const number = prompt("What is your number?");
-    if(number % 2 === 0){
-    alert("Your number is even.");
-    } else{
-    alert("Your number is odd.");
+    evenOrOdd(number);
+
+    function positiveOrNegative(number) {
+        if (number > 0) {
+            alert("Your number is positive :)");
+        } else if(number < 0 ) {
+            alert("Your number is negative :(");
+        } else{
+            alert("Your number is 0, which is neither negative nor positive.");
+        }
     }
 
-    if(number >= 0){
-        alert("Your number is positive:)");
-    } else{
-        alert("Your number is negative:(");
+    positiveOrNegative(number);
+
+    function plusOneHundred(number) {
+        return parseInt(number) + 100;
     }
 
-    const plusOneHundred = parseInt(number) +  100;
-    alert("Your number + 100 is: " + plusOneHundred);
+    const result = plusOneHundred(number);
+    alert("This is your number + 100: " + result);
 } else{
-    alert("I wasn't expecting that.");
+    alert("I wasn't expecting that");
 }
+// const enterNumber = confirm("Would you like to enter a number?");
+// if(enterNumber === true){
+//     const number = prompt("What is your number?");
+//     if(number % 2 === 0){
+//     alert("Your number is even.");
+//     } else{
+//     alert("Your number is odd.");
+//     }
+//
+//     if(number >= 0){
+//         alert("Your number is positive:)");
+//     } else{
+//         alert("Your number is negative:(");
+//     }
+//
+//     const plusOneHundred = parseInt(number) +  100;
+//     alert("Your number + 100 is: " + plusOneHundred);
+// } else{
+//     alert("I wasn't expecting that.");
+// }
