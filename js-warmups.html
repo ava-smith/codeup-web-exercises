@@ -21,22 +21,52 @@
     addTen('bob'); // returns false
 
    */
-function addTen(input){
-  if (typeof input === 'number'){
-    return input + 10;
-  } else{
-    return false;
-  }
-}
-
-// const output = addTen(0.1);
-// console.log(output);
-console.log(addTen(0.1), 10.1);
-console.log(addTen('hello'), false);
-console.log(addTen(-9), 1);
-console.log(addTen(34), 44);
+// function addTen(input){
+//   if (typeof input === 'number'){
+//     return input + 10;
+//   } else{
+//     return false;
+//   }
+// }
+//
+// // const output = addTen(0.1);
+// // console.log(output);
+// console.log(addTen(0.1), 10.1);
+// console.log(addTen('hello'), false);
+// console.log(addTen(-9), 1);
+// console.log(addTen(34), 44);
 
 // note: you can make the console.log print out 2 outputs using a ',' to separate the outputs.
+
+  /* TODO
+
+  Write a function, makeUpperCase, that takes in an input and returns the input in uppercase if it is a string.
+  If the input is not a string, return false.
+
+  Examples:
+
+  makeUpperCase('cat') // returns 'CAT'
+  makeUpperCase('DoG') // returns 'DOG'
+  makeUpperCase('CODEUP') // returns 'CODEUP'
+  makeUpperCase(54) // returns false
+  makeUpperCase(true) // returns false
+  makeUpperCase(null) // returns false
+
+  */
+
+  function makeUpperCase(input){
+    if(typeof input === 'string'){
+      return input.toUpperCase();
+    } else{
+      return false;
+    }
+  }
+   console.log(makeUpperCase('cat'), 'CAT');
+  console.log(makeUpperCase(54), false);
+  console.log(makeUpperCase('DoG'), 'DOG');
+  console.log(makeUpperCase(true), false);
+  console.log(makeUpperCase(null), false);
+  console.log(makeUpperCase('CODEUP'), 'CODEUP');
 
 </script>
 
