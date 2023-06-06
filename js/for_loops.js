@@ -1,22 +1,14 @@
 "use strict";
 
 //Problem 2
-// function showMultiplicationTable(number) {
-//     console.log(number +' x ' +'1' + ' = ' + number*1);
-//     console.log(number +' x ' +'2' + ' = ' + number*2);
-//     console.log(number +' x ' +'3' + ' = ' + number*3);
-//     console.log(number +' x ' +'4' + ' = ' + number*4);
-//     console.log(number +' x ' +'5' + ' = ' + number*5);
-//     console.log(number +' x ' +'6' + ' = ' + number*6);
-//     console.log(number +' x ' +'7' + ' = ' + number*7);
-//     console.log(number +' x ' +'8' + ' = ' + number*8);
-//     console.log(number +' x ' +'9' + ' = ' + number*9);
-//     console.log(number +' x ' +'10' + ' = ' + number*10);
+
+// function showMultiplicationTable (userNumber) {
+//     for (let i = 1; i <= 10; i++) {
+//         console.log(`${userNumber} x ${i} = ${userNumber * i}`);
+//     }
 // }
+//
 // showMultiplicationTable(9);
-// function showMultiplicationTable (userNumber){
-// console.log(`${userNumber}`)
-// let i = 1
 
 //Problem 3
 
@@ -36,6 +28,12 @@
 //     console.log(String(j).repeat(j))
 // }
 // console.log(string);
+// function numPyramid() {
+//     for(let i = 1; i < 10; i ++){
+//         console.log(`${i.toString().repeat(i)}`);
+//     }
+// }
+// numPyramid();
 
 //Problem 5
 // for(let i = 100; i >= 5; i -= 5){
