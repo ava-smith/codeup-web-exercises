@@ -32,6 +32,11 @@
      * > console.log(person.sayHello()) // "Hello from Rick Sanchez!"
      */
 
+    // person.sayHello = function() {
+    //     return `Hello from ${this.firstName} ${this.lastName}`;
+    // }
+    //
+    // console.log(person.sayHello());
     /** TODO:
      * HEB has an offer for the shoppers that buy products amounting to
      * more than $200. If a shopper spends more than $200, they get a 12%
@@ -47,26 +52,27 @@
      */
 
 
-    let shoppers = [
-        {name: 'Cameron', amount: 180},
-        {name: 'Ryan', amount: 250},
-        {name: 'George', amount: 320}
-    ];
+    // let shoppers = [
+    //     {name: 'Cameron', amount: 180},
+    //     {name: 'Ryan', amount: 250},
+    //     {name: 'George', amount: 320}
+    // ];
+    //
+    // shoppers.forEach((shopper) => {
+    //     const discountMath = () => {
+    //         if (shopper.amount > 200) {
+    //             console.log(`You spent over $200! You get a %12 discount!`)
+    //             return shopper.amount - (shopper.amount * 0.12);
+    //         } else {
+    //             return shopper.amount
+    //         }
+    //     }
+    //         console.log(`Shopper's name: ${shopper.name}`);
+    //         console.log(`Amount spent: $${shopper.amount.toFixed(2)}`);
+    //         console.log(`How much you have to pay: $${discountMath().toFixed(2)}`);
+    //     });
 
-    // for(let i = 0; i < shoppers.length; i++){
-    shoppers.forEach((shopper) => {
-        const discountMath = () => {
-            if (shopper.amount > 200) {
-                console.log(`You spent over $200! You get a %12 discount!`)
-                return shopper.amount - (shopper.amount * 0.12);
-            } else {
-                return shopper.amount
-            }
-        }
-            console.log(`Shopper's name: ${shopper.name}`);
-            console.log(`Amount spent: $${shopper.amount.toFixed(2)}`);
-            console.log(`How much you have to pay: $${discountMath().toFixed(2)}`);
-        });
+
 
     /** TODO:
      * Create an array of objects that represent books and store it in a
@@ -81,43 +87,13 @@
      * > console.log(books[0].author.lastName) // "Adams"
      */
 
-    let books = [
-        {
-            title: 'Throne of Glass',
-            author: {
-                firstName: 'Sarah',
-                lastName: 'Maas'
-            }
-        },
-        {
-            title: 'The Hate U Give',
-            author: {
-                firstName: 'Angie',
-                lastName: 'Thomas'
-            }
-        },
-        {
-            title: 'Between Shades of Gray',
-            author: {
-                firstName: 'Ruta',
-                lastName: 'Sepetys'
-            }
-        },
-        {
-            title: 'The House on Mango Street',
-            author: {
-                firstName: 'Sandra',
-                lastName: 'Cisneros'
-            }
-        },
-        {
-            title: 'Pet Sematary',
-            author: {
-                firstName: 'Stephen',
-                lastName: 'King'
-            }
-        }
-    ];
+    // let books = [
+    //     {title: 'Throne of Glass', author: {firstName: 'Sarah', lastName: 'Maas'}},
+    //     {title: 'The Hate U Give', author: {firstName: 'Angie', lastName: 'Thomas'}},
+    //     {title: 'Between Shades of Gray', author: {firstName: 'Ruta', lastName: 'Sepetys'}},
+    //     {title: 'The House on Mango Street', author: {firstName: 'Sandra', lastName: 'Cisneros'}},
+    //     {title: 'Pet Sematary', author: {firstName: 'Stephen', lastName: 'King'}}
+    // ];
 
     /**
      * TODO:
@@ -143,11 +119,20 @@
      *      ---
      *      ...
      */
-    for(let i = 0; i < books.length; i++){
-        console.log(`Book # ${i}`);
-        console.log(`Title: ${books[i].title}`);
-        console.log(`Author: ${books[i].author.firstName} ${books[i].author.lastName}`);
-    }
+    // for(let i = 0; i < books.length; i++){
+    //     console.log(`Book # ${i}`);
+    //     console.log(`Title: ${books[i].title}`);
+    //     console.log(`Author: ${books[i].author.firstName} ${books[i].author.lastName}`);
+    // }
+
+    // books.forEach((book, index) => {
+    //     console.log(`Book # ${index +1}`);
+    //     console.log(`Title: ${book.title}`);
+    //     console.log(`Author: ${book.author.firstName} ${book.author.lastName}`);
+    //     if(index < books.length -1){
+    //         console.log("---");
+    //     }
+    // })
     /**
      * Bonus:
      * - Create a function named `createBook` that accepts a title and author
@@ -159,8 +144,28 @@
      *   `showBookInfo` function.
      */
 
-    function createBook(title, authorName){
 
+    //returns a book object with the properties described
+    //Refactor your code that creates the books array to instead use your function.
+
+    function createBook(title, authorFirstName, authorLastName){
+        return {
+            title: title,
+            author: {
+                firstName: authorFirstName,
+                lastName: authorLastName
+            }
+        };
     }
 
+    let books = [
+        createBook("Twilight", "Stephenie", "Meyer"),
+        createBook("Throne of Glass", "Sarah", "Maas"),
+    ];
+
+    function showBookInfo(book) {
+        console.log(`Title: ${book.title}`);
+        console.log(`Author: ${book.author.firstName} ${book.author.lastName}`)
+    }
+    showBookInfo(books[1]);
 })();
