@@ -1,0 +1,10 @@
+header {
+    background-color: lightpink;
+    padding: 10px;
+}
+#navigation {
+    border: 1px solid black;
+}
+#navigation li {
+    display: inline-block;
+}
