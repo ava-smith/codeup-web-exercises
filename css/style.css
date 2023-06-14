@@ -1,3 +1,80 @@
-.fancy-header {
-    color: purple;
+:root{
+    --primary: #2f572f;
+    --primary-light: #728f72;
 }
+.fancy-header {
+    color: #1c411d;
+    text-align: center;
+}
+header {
+    background-color: rgba(183, 179, 179, 0.8);
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 20px;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+h1, h2, h4, h5, h6 {
+    font-family: 'Lilita One', cursive;
+    letter-spacing: 3px;
+    color: var(--primary);
+    text-decoration: underline;
+}
+body {
+    font-family: "Merriweather", serif;
+    background-image: url(../img/plant-picture.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: right;
+}
+img {
+    max-width: 100%;
+}
+section {
+    background-color: rgba(183, 179, 179, 0.8);
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 20px;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+img {
+    display: inline-block;
+    width: calc(50% - 10px);
+    aspect-ratio: 4/3;
+    object-fit: cover;
+}
+section.vision-background {
+
+    text-align: center;
+    background-color: #969696;
+}
+header p {
+    text-align: center;
+}
+footer {
+    font-family: "Merriweather", serif;
+    text-align: center;
+}
+ul {
+    list-style: square;
+}
+button {
+    cursor: pointer;
+}
+button {
+    padding: 20px 30px;
+    background-color: #629454;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    font-family: "Merriweather", serif;
+    font-weight: 400;
+}
+button:hover {
+    background-color: var(--primary-light);
+}
+th, tr, td {
+    padding: 10px;
+}
+
+
