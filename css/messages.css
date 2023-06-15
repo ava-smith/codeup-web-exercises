@@ -1,11 +1,11 @@
 :root {
-    --bg-info: rgba(23, 23, 248, 0.30);
-    --text-info: #0202bd;
-    --bg-success: rgba(6, 178, 6, 0.30);
-    --text-success: #058105;
-    --bg-warning: rgba(255, 255, 0, 0.30);
+    --bg-info: rgb(205 222 255);
+    --text-info: rgb(47 37 140);
+    --bg-success: rgb(207 242 218);
+    --text-success: #218121;
+    --bg-warning: rgba(255, 255, 0, 0.32);
     --text-warning: #9b9b2a;
-    --bg-error: rgba(255, 0, 0, 0.30);
+    --bg-error: rgba(246, 48, 48, 0.32);
     --text-error: #8a0202;
 }
 body, html {
