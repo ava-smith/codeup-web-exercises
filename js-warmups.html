@@ -146,6 +146,46 @@
 
   console.log(returnUserObject('asmith', 'password123', 'ava013005@gmail.com'));
 
+  // ================================= WARM UP
+  // Create a function, returnProduct, that takes in an array of numbers and returns the product of all the numbers.
+  //         Assume all element in the input array are valid numbers. Assume all array inputs have at least 1 number.
+  // returnProduct([1, 2, 3]) // returns 1 * 2 * 3 = 6
+  // returnProduct([3, 3, 3]) // returns 3 * 3 * 3 = 27
+  // returnProduct([4, 1, 2]) // returns 4 * 1 * 2 = 8
+  // returnProduct([4, 0, 2]) // returns 4 * 0 * 2 = 0
+  // returnProduct([5, 3, 2]) // returns 5 * 3 * 2 = 30
+
+  function returnProduct (numbers) {
+    let sum = 1;
+    for (let i=0; i < numbers.length; i++)
+      sum = sum * numbers[i];
+      return sum;
+  }
+
+  console.log(returnProduct([1, 2, 3]), 6); // returns 1 * 2 * 3 = 6
+  console.log(returnProduct([3, 3, 3]), 27); // returns 3 * 3 * 3 = 27
+  console.log(returnProduct([4, 1, 2]), 8); // returns 4 * 1 * 2 = 8
+  console.log(returnProduct([4, 0, 2]), 0); // returns 4 * 0 * 2 = 0
+  console.log(returnProduct([5, 3, 2]), 30); // returns 5 * 3 * 2 = 30
+
+
+  // function returnProduct(nums) {
+    /* for of loop */
+    // let product = 1;
+    // for(let num of nums) {
+    //   product *= num;
+    // }
+    // return product;
+
+    /* for each loop */
+    // let product = 1;
+    // nums.forEach((num) => {
+    //   product *= num;
+    // });
+    // return product;
+  // }
+
+  // console.log(returnProduct([1,2,3]), 6);
 </script>
 
 </body>
