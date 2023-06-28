@@ -1,175 +1,175 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>JS Warm Ups</title>
+    <meta charset="UTF-8">
+    <title>JS Warm Ups</title>
 </head>
 <body>
 
 <script>
-  "use strict";
+    "use strict";
 
-  /* TODO
+    /* TODO
 
-    Write a function, addTen, that takes in an input. If the input is a number,
-    return the input plus ten and false otherwise.
+      Write a function, addTen, that takes in an input. If the input is a number,
+      return the input plus ten and false otherwise.
+
+      Examples:
+
+      addTen(0); // returns 10
+      addTen(10); // returns 20
+      addTen('bob'); // returns false
+
+     */
+    // function addTen(input){
+    //   if (typeof input === 'number'){
+    //     return input + 10;
+    //   } else{
+    //     return false;
+    //   }
+    // }
+    //
+    // // const output = addTen(0.1);
+    // // console.log(output);
+    // console.log(addTen(0.1), 10.1);
+    // console.log(addTen('hello'), false);
+    // console.log(addTen(-9), 1);
+    // console.log(addTen(34), 44);
+
+    // note: you can make the console.log print out 2 outputs using a ',' to separate the outputs.
+
+    /* TODO
+
+    Write a function, makeUpperCase, that takes in an input and returns the input in uppercase if it is a string.
+    If the input is not a string, return false.
 
     Examples:
 
-    addTen(0); // returns 10
-    addTen(10); // returns 20
-    addTen('bob'); // returns false
+    makeUpperCase('cat') // returns 'CAT'
+    makeUpperCase('DoG') // returns 'DOG'
+    makeUpperCase('CODEUP') // returns 'CODEUP'
+    makeUpperCase(54) // returns false
+    makeUpperCase(true) // returns false
+    makeUpperCase(null) // returns false
 
-   */
-// function addTen(input){
-//   if (typeof input === 'number'){
-//     return input + 10;
-//   } else{
-//     return false;
-//   }
-// }
-//
-// // const output = addTen(0.1);
-// // console.log(output);
-// console.log(addTen(0.1), 10.1);
-// console.log(addTen('hello'), false);
-// console.log(addTen(-9), 1);
-// console.log(addTen(34), 44);
+    */
 
-// note: you can make the console.log print out 2 outputs using a ',' to separate the outputs.
+    // function makeUpperCase(input){
+    //   if(typeof input === 'string'){
+    //     return input.toUpperCase();
+    //   } else{
+    //     return false;
+    //   }
+    // }
+    //  console.log(makeUpperCase('cat'), 'CAT');
+    // console.log(makeUpperCase(54), false);
+    // console.log(makeUpperCase('DoG'), 'DOG');
+    // console.log(makeUpperCase(true), false);
+    // console.log(makeUpperCase(null), false);
+    // console.log(makeUpperCase('CODEUP'), 'CODEUP');
 
-  /* TODO
+    //================================= WARM UP
 
-  Write a function, makeUpperCase, that takes in an input and returns the input in uppercase if it is a string.
-  If the input is not a string, return false.
+    // Write a function, sumIsEqual, that takes in three inputs. The function should return
+    // true if the sum of the first two inputs are equal to the third input. If any of the
+    // inputs are not numbers, return false.
+    //
+    // sumIsEqual(1, 2, 3) // returns true
+    // sumIsEqual(2, 2, 4) // returns true
+    // sumIsEqual(10, 2, 12) // returns true
+    // sumIsEqual(10, false, 12) // returns false
+    // sumIsEqual('10', '2', 12) // returns false
+    // sumIsEqual('fred', 'bob, 'hello') // returns false
 
-  Examples:
+    // function sumIsEqual (input1, input2, input3){
+    //   if(!isNaN(input1) && !isNaN(input2) && !isNaN(input3)){
+    //     return true;
+    //   } else if((input1 + input2) === input3){
+    //     return true;
+    //   } else{
+    //     return false;
+    //   }
+    // }
+    // console.log(sumIsEqual(1, 2, 3)) // returns true
+    // console.log(sumIsEqual(2, 2, 4)) // returns true
+    // console.log(sumIsEqual(10, 2, 12)) // returns true
+    // console.log(sumIsEqual(10, false, 12)) // returns false
+    // console.log(sumIsEqual('10', '2', 12)) // returns false
+    // sumIsEqual('fred', 'bob, 'hello') // returns false
 
-  makeUpperCase('cat') // returns 'CAT'
-  makeUpperCase('DoG') // returns 'DOG'
-  makeUpperCase('CODEUP') // returns 'CODEUP'
-  makeUpperCase(54) // returns false
-  makeUpperCase(true) // returns false
-  makeUpperCase(null) // returns false
+    function sumIsEqual(input1, input2, input3) {
+        if (typeof input1 !== 'number' || typeof input2 !== 'number' || typeof input3 !== 'number') {
+            return false;
+        }
 
-  */
+        return ((input1 + input2) === input3);
 
-  // function makeUpperCase(input){
-  //   if(typeof input === 'string'){
-  //     return input.toUpperCase();
-  //   } else{
-  //     return false;
-  //   }
-  // }
-  //  console.log(makeUpperCase('cat'), 'CAT');
-  // console.log(makeUpperCase(54), false);
-  // console.log(makeUpperCase('DoG'), 'DOG');
-  // console.log(makeUpperCase(true), false);
-  // console.log(makeUpperCase(null), false);
-  // console.log(makeUpperCase('CODEUP'), 'CODEUP');
-
-  //================================= WARM UP
-
-  // Write a function, sumIsEqual, that takes in three inputs. The function should return
-  // true if the sum of the first two inputs are equal to the third input. If any of the
-  // inputs are not numbers, return false.
-  //
-  // sumIsEqual(1, 2, 3) // returns true
-  // sumIsEqual(2, 2, 4) // returns true
-  // sumIsEqual(10, 2, 12) // returns true
-  // sumIsEqual(10, false, 12) // returns false
-  // sumIsEqual('10', '2', 12) // returns false
-  // sumIsEqual('fred', 'bob, 'hello') // returns false
-
-  // function sumIsEqual (input1, input2, input3){
-  //   if(!isNaN(input1) && !isNaN(input2) && !isNaN(input3)){
-  //     return true;
-  //   } else if((input1 + input2) === input3){
-  //     return true;
-  //   } else{
-  //     return false;
-  //   }
-  // }
-  // console.log(sumIsEqual(1, 2, 3)) // returns true
-  // console.log(sumIsEqual(2, 2, 4)) // returns true
-  // console.log(sumIsEqual(10, 2, 12)) // returns true
-  // console.log(sumIsEqual(10, false, 12)) // returns false
-  // console.log(sumIsEqual('10', '2', 12)) // returns false
-  // sumIsEqual('fred', 'bob, 'hello') // returns false
-
-  function sumIsEqual(input1, input2, input3){
-    if(typeof input1 !== 'number' || typeof input2 !== 'number' || typeof input3 !== 'number'){
-      return false;
     }
 
-    return((input1 + input2) === input3);
+    console.log(sumIsEqual(1, 2, 3), true); // returns true
+    console.log(sumIsEqual(2, 2, 4), true); // returns true
+    console.log(sumIsEqual(10, 2, 12), true); // returns true
+    console.log(sumIsEqual(10, false, 12), false); // returns false
+    console.log(sumIsEqual('10', '2', 12), false); // returns false
+    console.log(sumIsEqual('fred', 'bob', 'hello'), false); // returns false
 
-  }
+    // ================================= WARM UP
+    //
+    // Write a function, returnUserObject, that takes in three String arguments: a username, password, and email. The function should return a user object with username, password and email properties.
+    //
+    // returnUserObject('jreich', 'password123', 'jreich@email.com') // returns...
+    //
+    // {
+    //   username: 'jreich',
+    //           password: 'password123',
+    //         email: 'jreich@email.com'
+    // }
+    //
+    // Assume all inputs are non-empty strings. The order of the properties does not matter.
 
-  console.log(sumIsEqual(1, 2, 3), true); // returns true
-  console.log(sumIsEqual(2, 2, 4), true); // returns true
-  console.log(sumIsEqual(10, 2, 12), true); // returns true
-  console.log(sumIsEqual(10, false, 12), false); // returns false
-  console.log(sumIsEqual('10', '2', 12), false); // returns false
-  console.log(sumIsEqual('fred', 'bob', 'hello'), false); // returns false
+    // function returnUserObject (username, password, email) {
+    //   return {
+    //     username: username,
+    //     password: password,
+    //     email: email,
+    //   }
+    // }
+    // console.log(returnUserObject('asmith', 'password123', 'ava013005@gmail.com'));
 
-  // ================================= WARM UP
-  //
-  // Write a function, returnUserObject, that takes in three String arguments: a username, password, and email. The function should return a user object with username, password and email properties.
-  //
-  // returnUserObject('jreich', 'password123', 'jreich@email.com') // returns...
-  //
-  // {
-  //   username: 'jreich',
-  //           password: 'password123',
-  //         email: 'jreich@email.com'
-  // }
-  //
-  // Assume all inputs are non-empty strings. The order of the properties does not matter.
+    function returnUserObject(username, password, email) {
+        const user = {};
+        user.username = username;
+        user.password = password;
+        user.email = email;
+        return user;
+    }
 
-  // function returnUserObject (username, password, email) {
-  //   return {
-  //     username: username,
-  //     password: password,
-  //     email: email,
-  //   }
-  // }
-  // console.log(returnUserObject('asmith', 'password123', 'ava013005@gmail.com'));
+    console.log(returnUserObject('asmith', 'password123', 'ava013005@gmail.com'));
 
-  function returnUserObject (username, password, email) {
-    const user = {};
-    user.username = username;
-    user.password = password;
-    user.email = email;
-    return user;
-  }
+    // ================================= WARM UP
+    // Create a function, returnProduct, that takes in an array of numbers and returns the product of all the numbers.
+    //         Assume all element in the input array are valid numbers. Assume all array inputs have at least 1 number.
+    // returnProduct([1, 2, 3]) // returns 1 * 2 * 3 = 6
+    // returnProduct([3, 3, 3]) // returns 3 * 3 * 3 = 27
+    // returnProduct([4, 1, 2]) // returns 4 * 1 * 2 = 8
+    // returnProduct([4, 0, 2]) // returns 4 * 0 * 2 = 0
+    // returnProduct([5, 3, 2]) // returns 5 * 3 * 2 = 30
 
-  console.log(returnUserObject('asmith', 'password123', 'ava013005@gmail.com'));
-
-  // ================================= WARM UP
-  // Create a function, returnProduct, that takes in an array of numbers and returns the product of all the numbers.
-  //         Assume all element in the input array are valid numbers. Assume all array inputs have at least 1 number.
-  // returnProduct([1, 2, 3]) // returns 1 * 2 * 3 = 6
-  // returnProduct([3, 3, 3]) // returns 3 * 3 * 3 = 27
-  // returnProduct([4, 1, 2]) // returns 4 * 1 * 2 = 8
-  // returnProduct([4, 0, 2]) // returns 4 * 0 * 2 = 0
-  // returnProduct([5, 3, 2]) // returns 5 * 3 * 2 = 30
-
-  // function returnProduct (numbers) {
-  //   let sum = 1;
-  //   for (let i=0; i < numbers.length; i++)
-  //     sum = sum * numbers[i];
-  //     return sum;
-  // }
-  //
-  // console.log(returnProduct([1, 2, 3]), 6); // returns 1 * 2 * 3 = 6
-  // console.log(returnProduct([3, 3, 3]), 27); // returns 3 * 3 * 3 = 27
-  // console.log(returnProduct([4, 1, 2]), 8); // returns 4 * 1 * 2 = 8
-  // console.log(returnProduct([4, 0, 2]), 0); // returns 4 * 0 * 2 = 0
-  // console.log(returnProduct([5, 3, 2]), 30); // returns 5 * 3 * 2 = 30
+    // function returnProduct (numbers) {
+    //   let sum = 1;
+    //   for (let i=0; i < numbers.length; i++)
+    //     sum = sum * numbers[i];
+    //     return sum;
+    // }
+    //
+    // console.log(returnProduct([1, 2, 3]), 6); // returns 1 * 2 * 3 = 6
+    // console.log(returnProduct([3, 3, 3]), 27); // returns 3 * 3 * 3 = 27
+    // console.log(returnProduct([4, 1, 2]), 8); // returns 4 * 1 * 2 = 8
+    // console.log(returnProduct([4, 0, 2]), 0); // returns 4 * 0 * 2 = 0
+    // console.log(returnProduct([5, 3, 2]), 30); // returns 5 * 3 * 2 = 30
 
 
-  // function returnProduct(nums) {
+    // function returnProduct(nums) {
     /* for of loop */
     // let product = 1;
     // for(let num of nums) {
@@ -183,68 +183,184 @@
     //   product *= num;
     // });
     // return product;
-  // }
+    // }
 
-  // console.log(returnProduct([1,2,3]), 6);
+    // console.log(returnProduct([1,2,3]), 6);
 
-  // ================================= WARM UP
-  //
-  // Create a function, returnTotalSales, that takes in an array of sales data objects and returns the sum of all
-  // totalItemsSold properties. Assume all elements in the input array are valid sales data objects with a totalItemsSold
-  // property.
-  //
-  //         EXAMPLE...
-  //
-  const salesData = [
-    {
-      month: 'January',
-      totalItemsSold: 0
-    },
-    {
-      month: 'February',
-      totalItemsSold: 5
-    },
-    {
-      month: 'March',
-      totalItemsSold: 2
-    },
-    {
-      month: 'April',
-      totalItemsSold: 10
-    },
-    {
-      month: 'May',
-      totalItemsSold: 30
+    // ================================= WARM UP
+    //
+    // Create a function, returnTotalSales, that takes in an array of sales data objects and returns the sum of all
+    // totalItemsSold properties. Assume all elements in the input array are valid sales data objects with a totalItemsSold
+    // property.
+    //
+    //         EXAMPLE...
+    //
+    const salesData = [
+        {
+            month: 'January',
+            totalItemsSold: 0
+        },
+        {
+            month: 'February',
+            totalItemsSold: 5
+        },
+        {
+            month: 'March',
+            totalItemsSold: 2
+        },
+        {
+            month: 'April',
+            totalItemsSold: 10
+        },
+        {
+            month: 'May',
+            totalItemsSold: 30
+        }
+    ];
+    //
+    // returnTotalSales(salesData) // returns 47
+
+    function returnTotalSales() {
+        let sum = 0;
+        // for loop
+        // for (let i=0; i < salesData.length; i++)
+        //   sum += salesData[i].totalItemsSold;
+        // for each
+        salesData.forEach((element) => {
+            sum += element.totalItemsSold;
+        });
+        return sum;
     }
-  ];
-  //
-  // returnTotalSales(salesData) // returns 47
 
-  function returnTotalSales () {
-    let sum = 0;
-    // for loop
-    // for (let i=0; i < salesData.length; i++)
-    //   sum += salesData[i].totalItemsSold;
-    // for each
-    salesData.forEach((element) => {
-      sum += element.totalItemsSold;
-    });
-      return sum;
-  }
-
-  console.log(returnTotalSales(salesData));
+    console.log(returnTotalSales(salesData));
 
 
-  // function returnTotalSales (salesData) {
-  //   const total = salesData[0].totalItemsSold +
-  //           salesData[1].totalItemsSold +
-  //           salesData[2].totalItemsSold +
-  //           salesData[3].totalItemsSold +
-  //           salesData[4].totalItemsSold;
-  //   return total;
-  // }
-  //
-  // console.log(returnTotalSales(salesData));
+    // function returnTotalSales (salesData) {
+    //   const total = salesData[0].totalItemsSold +
+    //           salesData[1].totalItemsSold +
+    //           salesData[2].totalItemsSold +
+    //           salesData[3].totalItemsSold +
+    //           salesData[4].totalItemsSold;
+    //   return total;
+    // }
+    //
+    // console.log(returnTotalSales(salesData));
+
+    // ================================= WARM UP
+    //
+    // Create a function, returnAvgSales, that takes in an array of sales data objects and returns the average of all
+    // total items sold. Assume all elements in the input array are valid sales data objects with a totalItemsSold
+    // property. If the array is empty, return 0. If the array has one element, return the value of the totalItemsSold.
+    //
+    //         EXAMPLE...
+    //
+    // const salesData = [
+    //   {
+    //     month: 'January',
+    //     totalItemsSold: 0
+    //   },
+    //   {
+    //     month: 'February',
+    //     totalItemsSold: 5
+    //   },
+    //   {
+    //     month: 'March',
+    //     totalItemsSold: 2
+    //   },
+    //   {
+    //     month: 'April',
+    //     totalItemsSold: 10
+    //   },
+    //   {
+    //     month: 'May',
+    //     totalItemsSold: 30
+    //   }
+    // ];
+    //
+    // returnAvgSales(salesData) // returns 9.4
+
+    // function returnAvgSales() {
+    //     let sum = 0;
+    //     for (let i=0; i < salesData.length; i++)
+    //           sum += salesData[i].totalItemsSold / salesData.length;
+    // }
+    // console.log(returnAvgSales(salesData));
+
+    function returnAvgSales(salesData) {
+        return returnTotalSales(salesData) / salesData.length;
+    }
+    console.log(returnAvgSales(salesData));
+
+    // ================================= WARM UP
+    //
+    // Create a function, returnAdmins, that takes in an array of user objects
+    // and returns an array of only the admin user objects. Assume the array
+    // has at least one user object and all elements have an isAdmin property.
+    //
+    //     Example:
+    //
+    //
+    const users = [
+
+        {
+            username: 'fred123',
+            password: 'letmein',
+            email: 'fred123@email.com',
+            isAdmin: true
+        },
+        {
+            username: 'cindy123',
+            password: 'hello123',
+            email: 'cindy123@email.com',
+            isAdmin: false
+        },
+        {
+            username: 'kathy123',
+            password: 'letmein',
+            email: 'kathy123@email.com',
+            isAdmin: true
+        },
+        {
+            username: 'kyle123',
+            password: 'letmein',
+            email: 'kyle123@email.com',
+            isAdmin: false
+        }
+    ]
+    //
+    //
+    // /*
+    //
+    // returnAdmins(users) returns...
+    //
+    // [
+    //
+    //     {
+    //         username: 'fred123',
+    //         password: 'letmein',
+    //         email: 'fred123@email.com',
+    //         isAdmin: true
+    //     },
+    //     {
+    //         username: 'kathy123',
+    //         password: 'letmein',
+    //         email: 'kathy123@email.com',
+    //         isAdmin: true
+    //     }
+    // ]
+    //
+    // */
+
+    function returnAdmins (users) {
+        const admins = [];
+        for (let i=0; i < users.length; i++) {
+            if (users[i].isAdmin === true) {
+                admins.push(users[i]);
+            }
+        }
+        return admins;
+    }
+    console.log(returnAdmins(users));
 </script>
 
 </body>
