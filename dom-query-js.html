@@ -25,6 +25,13 @@
     culpa qui officia deserunt mollit anim id est laborum.
 </p>
 
+<div>
+    <button id="change-header">Change the Header</button>
+    <button id="change-subheader">Change the Subheader</button>
+    <button id="change-color">Change the Color</button>
+    <button id="change-message">Change the Message</button>
+</div>
+
 <script>
     (function() {
         "use strict";
@@ -32,14 +39,16 @@
         let mainHeader = document.getElementById('main-header');
 
         // TODO: Set inner html of mainHeader to "JavaScript is Cool"
-        mainHeader.innerHTML = "JavaScript is Cool";
-
+        function changeHeader () {
+            mainHeader.innerHTML = "JavaScript is Cool";
+        }
         // TODO: Uncomment the next line and get the sub header element by id
         let subHeader = document.getElementById('sub-header');
 
         // TODO: Set the text color of subHeader to blue
-        subHeader.style.color = "blue";
-
+        function changeSubheader () {
+            subHeader.style.color = "blue";
+        }
         // TODO: Uncomment the next line and get all list items
         let listItems = document.getElementsByTagName('li');
 
@@ -53,23 +62,39 @@
         // }
 
         //walkthrough...
-        for(let i = 0; i < listItems.length; i += 1) {
-            if(listItems[i].getAttribute('data-dbid') === '1') {
-                listItems[i].style.color = 'blue';
-                continue;
-            }
-            if(i % 2 === 0) {
-                listItems[i].style.color = 'grey';
+        function changeColor () {
+            for (let i = 0; i < listItems.length; i += 1) {
+                if (listItems[i].getAttribute('data-dbid') === '1') {
+                    listItems[i].style.color = 'blue';
+                    continue;
+                }
+                if (i % 2 === 0) {
+                    listItems[i].style.color = 'grey';
+                }
             }
         }
-
         // TODO: Set text color of li with dbid = 1 to blue
 
         // TODO: Uncomment the next line and get all elements with class name sub-paragraph
         let subParagraphs = document.getElementsByClassName('sub-paragraph');
 
         // TODO: Change the text in the first sub paragraph to "Mission Accomplished!"
-        subParagraphs[0].innerText = "Mission Accomplished!";
+        function changeMessage () {
+            subParagraphs[0].innerText = "Mission Accomplished!";
+        }
+        // button event listeners...
+
+        const headerBtn = document.getElementById('change-header');
+        headerBtn.addEventListener('click', changeHeader);
+
+        const subheaderBtn = document.getElementById('change-subheader');
+        subheaderBtn.addEventListener('click', changeSubheader);
+
+        const colorBtn = document.getElementById('change-color');
+        colorBtn.addEventListener('click', changeColor);
+
+        const messageBtn = document.getElementById('change-message');
+        messageBtn.addEventListener('click', changeMessage);
 
     })();
 </script>
