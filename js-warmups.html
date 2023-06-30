@@ -427,6 +427,35 @@
     console.log(bestNeighborhood(neighborhood3), true);
     console.log(bestNeighborhood(neighborhood4), false);
 
+    // ================================= WARM UP
+    //
+    //
+    // Write a function, returnLargestStudentCount, that takes in an array of classes returns the number of students in the largest class.
+    // Assume at least one class object will be present in the input array with students property set to a valid positive integer.
+    //
+        let classes = [
+        {class: "6th grade history", students: 18},
+        {class: "7th grade history", students: 20},
+        {class: "8th grade history", students: 22},
+        {class: "4th grade history", students: 30},
+        {class: "10th grade history", students: 25}
+    ];
+    //
+    //
+    // returnLargestStudentCount(classes) // returns 30
+
+
+    function returnLargestStudentCount(classes) {
+        let largestClass = 0;
+        for(let i = 0; i < classes.length; i++){
+            if(largestClass < classes[i].students) {
+                largestClass = classes[i].students;
+            }
+        }
+        return largestClass;
+    }
+
+    console.log(returnLargestStudentCount(classes), 30);
 </script>
 
 </body>
