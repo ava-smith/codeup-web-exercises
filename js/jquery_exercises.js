@@ -1,5 +1,5 @@
 "use strict";
 
 $(function () {
-    alert("the page has loaded");
+    alert("the DOM is loaded");
 })
