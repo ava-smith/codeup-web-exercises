@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Konami Code</title>
+</head>
+<body>
+<h1>Konami Code</h1>
+
+<script src="https://code.jquery.com/jquery-2.2.4.min.js"
+        integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+<script>
+    "use strict";
+
+    // TO FIND SEQUENCE
+    // $(document).keyup(function (event) {
+    //     console.log(event.keyCode);
+    // });
+
+    let pattern = [38, 38, 40, 40, 37, 39, 37, 39, 66, 65, 13];
+    let current = 0;
+
+    $(document).keyup(function (e) {
+        if(pattern.indexOf(e.keyCode) < 0 || e.keyCode !== pattern[current]){
+            current = 0;
+            return;
+        }
+        current++;
+
+        if(pattern.length === current) {
+            current = 0;
+            $('body').css('background-image', 'url(./img/squirel.gif)').css('background-size', 'cover');
+        }
+    });
+
+
+</script>
+</body>
+</html>

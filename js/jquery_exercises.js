@@ -41,27 +41,50 @@ $(function () {
 
    //Add jQuery code that will change the background color of an h1 element when clicked.
 
-   function changeBackgroundColor() {
-      $(this).css('background-color', 'pink');
-   }
+   //MY CODE
+   // function changeBackgroundColor() {
+   //    $(this).css('background-color', 'pink');
+   // }
+   //
+   // $('h1').on('click', changeBackgroundColor);
 
-   $('h1').on('click', changeBackgroundColor);
+   //WALKTHROUGH
 
+   $('h1').on('click', (e) => {
+      $(e.target).css('background-color', 'blue');
+   });
    //Make all paragraphs have a font size of 18px when they are double clicked.
-   function changeFontSize() {
-      $('p').css('font-size', '18px');
-   }
-   $('p').on('dblclick', changeFontSize);
 
+   //MY CODE
+   // function changeFontSize() {
+   //    $('p').css('font-size', '18px');
+   // }
+   // $('p').on('dblclick', changeFontSize);
+
+   //WALKTHROUGH
+   $('p').on('dblclick', (e) => {
+      $(e.target).css('font-size', '18px');
+   });
    //Set all li text color to red when the mouse is hovering; reset to black when it is not.
-   function changeTextColor() {
-      $('li').css('color', 'red');
-   }
-   function changeTextColorToDefault() {
-      $('li').css('color', 'black');
-   }
 
-   $('li')
-       .on('mouseenter', changeTextColor)
-       .on('mouseleave', changeTextColorToDefault);
+   //MY CODE
+   // function changeTextColor() {
+   //    $('li').css('color', 'red');
+   // }
+   // function changeTextColorToDefault() {
+   //    $('li').css('color', 'black');
+   // }
+   //
+   // $('li')
+   //     .on('mouseenter', changeTextColor)
+   //     .on('mouseleave', changeTextColorToDefault);
+
+   //WALKTHROUGH
+   $('li').on('mouseenter', (e) => {
+      $(e.target).css('color', 'red');
+   });
+
+   $('li').on('mouseleave', (e) => {
+      $(e.target).css('color', 'black');
+   });
 })
