@@ -97,21 +97,21 @@
     // console.log(sumIsEqual('10', '2', 12)) // returns false
     // sumIsEqual('fred', 'bob, 'hello') // returns false
 
-    function sumIsEqual(input1, input2, input3) {
-        if (typeof input1 !== 'number' || typeof input2 !== 'number' || typeof input3 !== 'number') {
-            return false;
-        }
-
-        return ((input1 + input2) === input3);
-
-    }
-
-    console.log(sumIsEqual(1, 2, 3), true); // returns true
-    console.log(sumIsEqual(2, 2, 4), true); // returns true
-    console.log(sumIsEqual(10, 2, 12), true); // returns true
-    console.log(sumIsEqual(10, false, 12), false); // returns false
-    console.log(sumIsEqual('10', '2', 12), false); // returns false
-    console.log(sumIsEqual('fred', 'bob', 'hello'), false); // returns false
+    // function sumIsEqual(input1, input2, input3) {
+    //     if (typeof input1 !== 'number' || typeof input2 !== 'number' || typeof input3 !== 'number') {
+    //         return false;
+    //     }
+    //
+    //     return ((input1 + input2) === input3);
+    //
+    // }
+    //
+    // console.log(sumIsEqual(1, 2, 3), true); // returns true
+    // console.log(sumIsEqual(2, 2, 4), true); // returns true
+    // console.log(sumIsEqual(10, 2, 12), true); // returns true
+    // console.log(sumIsEqual(10, false, 12), false); // returns false
+    // console.log(sumIsEqual('10', '2', 12), false); // returns false
+    // console.log(sumIsEqual('fred', 'bob', 'hello'), false); // returns false
 
     // ================================= WARM UP
     //
@@ -136,15 +136,15 @@
     // }
     // console.log(returnUserObject('asmith', 'password123', 'ava013005@gmail.com'));
 
-    function returnUserObject(username, password, email) {
-        const user = {};
-        user.username = username;
-        user.password = password;
-        user.email = email;
-        return user;
-    }
-
-    console.log(returnUserObject('asmith', 'password123', 'ava013005@gmail.com'));
+    // function returnUserObject(username, password, email) {
+    //     const user = {};
+    //     user.username = username;
+    //     user.password = password;
+    //     user.email = email;
+    //     return user;
+    // }
+    //
+    // console.log(returnUserObject('asmith', 'password123', 'ava013005@gmail.com'));
 
     // ================================= WARM UP
     // Create a function, returnProduct, that takes in an array of numbers and returns the product of all the numbers.
@@ -195,44 +195,44 @@
     //
     //         EXAMPLE...
     //
-    const salesData = [
-        {
-            month: 'January',
-            totalItemsSold: 0
-        },
-        {
-            month: 'February',
-            totalItemsSold: 5
-        },
-        {
-            month: 'March',
-            totalItemsSold: 2
-        },
-        {
-            month: 'April',
-            totalItemsSold: 10
-        },
-        {
-            month: 'May',
-            totalItemsSold: 30
-        }
-    ];
+    // const salesData = [
+    //     {
+    //         month: 'January',
+    //         totalItemsSold: 0
+    //     },
+    //     {
+    //         month: 'February',
+    //         totalItemsSold: 5
+    //     },
+    //     {
+    //         month: 'March',
+    //         totalItemsSold: 2
+    //     },
+    //     {
+    //         month: 'April',
+    //         totalItemsSold: 10
+    //     },
+    //     {
+    //         month: 'May',
+    //         totalItemsSold: 30
+    //     }
+    // ];
     //
     // returnTotalSales(salesData) // returns 47
 
-    function returnTotalSales() {
-        let sum = 0;
-        // for loop
-        // for (let i=0; i < salesData.length; i++)
-        //   sum += salesData[i].totalItemsSold;
-        // for each
-        salesData.forEach((element) => {
-            sum += element.totalItemsSold;
-        });
-        return sum;
-    }
-
-    console.log(returnTotalSales(salesData));
+    // function returnTotalSales() {
+    //     let sum = 0;
+    //     // for loop
+    //     // for (let i=0; i < salesData.length; i++)
+    //     //   sum += salesData[i].totalItemsSold;
+    //     // for each
+    //     salesData.forEach((element) => {
+    //         sum += element.totalItemsSold;
+    //     });
+    //     return sum;
+    // }
+    //
+    // console.log(returnTotalSales(salesData));
 
 
     // function returnTotalSales (salesData) {
@@ -286,10 +286,11 @@
     // }
     // console.log(returnAvgSales(salesData));
 
-    function returnAvgSales(salesData) {
-        return returnTotalSales(salesData) / salesData.length;
-    }
-    console.log(returnAvgSales(salesData));
+    // function returnAvgSales(salesData) {
+    //     return returnTotalSales(salesData) / salesData.length;
+    // }
+    //
+    // console.log(returnAvgSales(salesData));
 
     // ================================= WARM UP
     //
@@ -300,34 +301,34 @@
     //     Example:
     //
     //
-    const users = [
-
-        {
-            username: 'fred123',
-            password: 'letmein',
-            email: 'fred123@email.com',
-            isAdmin: true
-        },
-        {
-            username: 'cindy123',
-            password: 'hello123',
-            email: 'cindy123@email.com',
-            isAdmin: false
-        },
-        {
-            username: 'kathy123',
-            password: 'letmein',
-            email: 'kathy123@email.com',
-            isAdmin: true
-        },
-        {
-            username: 'kyle123',
-            password: 'letmein',
-            email: 'kyle123@email.com',
-            isAdmin: false
-        }
-    ]
+    // const users = [
     //
+    //     {
+    //         username: 'fred123',
+    //         password: 'letmein',
+    //         email: 'fred123@email.com',
+    //         isAdmin: true
+    //     },
+    //     {
+    //         username: 'cindy123',
+    //         password: 'hello123',
+    //         email: 'cindy123@email.com',
+    //         isAdmin: false
+    //     },
+    //     {
+    //         username: 'kathy123',
+    //         password: 'letmein',
+    //         email: 'kathy123@email.com',
+    //         isAdmin: true
+    //     },
+    //     {
+    //         username: 'kyle123',
+    //         password: 'letmein',
+    //         email: 'kyle123@email.com',
+    //         isAdmin: false
+    //     }
+    // ]
+    // //
     //
     // /*
     //
@@ -351,66 +352,67 @@
     //
     // */
 
-    function returnAdmins (users) {
-        const admins = [];
-        for (let i=0; i < users.length; i++) {
-            if (users[i].isAdmin === true) {
-                admins.push(users[i]);
-            }
-        }
-        return admins;
-    }
-    console.log(returnAdmins(users));
+    // function returnAdmins(users) {
+    //     const admins = [];
+    //     for (let i = 0; i < users.length; i++) {
+    //         if (users[i].isAdmin === true) {
+    //             admins.push(users[i]);
+    //         }
+    //     }
+    //     return admins;
+    // }
+    //
+    // console.log(returnAdmins(users));
 
-//     ================================= WARM UP
-//
-//     Write a function that takes a neighborhood object and determines if it is desirable. A neighborhood is desirable.
-//         If the median home price is less than 300000, crime rates are low, and the total rating of schools is at least 24.
-//     The function should return true if the neighborhood object is desirable and false otherwise.
-//
-// // example data...
-//
-    const neighborhood1 = {
-        neighborhood: "Lovely Estates",
-        medianHomePrice: 280000,
-        pool: true,
-        tennis: false,
-        crimeRate: "low",
-        schools: 22
-    };
+    //     ================================= WARM UP
+    //
+    //     Write a function that takes a neighborhood object and determines if it is desirable. A neighborhood is desirable.
+    //         If the median home price is less than 300000, crime rates are low, and the total rating of schools is at least 24.
+    //     The function should return true if the neighborhood object is desirable and false otherwise.
+    //
+    // // example data...
+    //
+    // const neighborhood1 = {
+    //     neighborhood: "Lovely Estates",
+    //     medianHomePrice: 280000,
+    //     pool: true,
+    //     tennis: false,
+    //     crimeRate: "low",
+    //     schools: 22
+    // };
 
-    const neighborhood2 = {
-        neighborhood: "Luminous Estates",
-        medianHomePrice: 270000,
-        pool: true,
-        tennis: false,
-        crimeRate: "high",
-        schools: 24
-    }
+    // const neighborhood2 = {
+    //     neighborhood: "Luminous Estates",
+    //     medianHomePrice: 270000,
+    //     pool: true,
+    //     tennis: false,
+    //     crimeRate: "high",
+    //     schools: 24
+    // }
 
-    const neighborhood3 = {
-        neighborhood: "Oak Mountain",
-        medianHomePrice: 290000,
-        pool: false,
-        tennis: false,
-        crimeRate: "low",
-        schools: 24
-    }
+    // const neighborhood3 = {
+    //     neighborhood: "Oak Mountain",
+    //     medianHomePrice: 290000,
+    //     pool: false,
+    //     tennis: false,
+    //     crimeRate: "low",
+    //     schools: 24
+    // }
 
-    const neighborhood4 = {
-        neighborhood: "Ginormous Acres",
-        medianHomePrice: 350000,
-        pool: true,
-        tennis: true,
-        crimeRate: "low",
-        schools: 27
-    }
+    // const neighborhood4 = {
+    //     neighborhood: "Ginormous Acres",
+    //     medianHomePrice: 350000,
+    //     pool: true,
+    //     tennis: true,
+    //     crimeRate: "low",
+    //     schools: 27
+    // }
 
-    function bestNeighborhood (neighborhood) {
-        //This is my code...
-        return neighborhood.medianHomePrice < 300_000 &&
-            neighborhood.crimeRate === "low" &&
-            neighborhood.schools >= 24;
+    // function bestNeighborhood(neighborhood) {
+    //     //This is my code...
+    //     return neighborhood.medianHomePrice < 300_000 &&
+    //         neighborhood.crimeRate === "low" &&
+    //         neighborhood.schools >= 24;
 
         //This is the walkthrough...
         // const isRightPrice = neighborhood.medianHomePrice < 300000;
@@ -420,12 +422,12 @@
         // const isDesirable = isRightPrice && isRightCrimeRate && isRightSchoolRating;
         //
         // return isDesirable;
-    }
 
-    console.log(bestNeighborhood(neighborhood1), false);
-    console.log(bestNeighborhood(neighborhood2), false);
-    console.log(bestNeighborhood(neighborhood3), true);
-    console.log(bestNeighborhood(neighborhood4), false);
+    //
+    // console.log(bestNeighborhood(neighborhood1), false);
+    // console.log(bestNeighborhood(neighborhood2), false);
+    // console.log(bestNeighborhood(neighborhood3), true);
+    // console.log(bestNeighborhood(neighborhood4), false);
 
     // ================================= WARM UP
     //
@@ -433,31 +435,31 @@
     // Write a function, returnLargestStudentCount, that takes in an array of classes returns the number of students in the largest class.
     // Assume at least one class object will be present in the input array with students property set to a valid positive integer.
     //
-        let classes = [
-        {class: "6th grade history", students: 18},
-        {class: "7th grade history", students: 20},
-        {class: "8th grade history", students: 22},
-        {class: "4th grade history", students: 30},
-        {class: "10th grade history", students: 25}
-    ];
-    //
+    // let classes = [
+    //     {class: "6th grade history", students: 18},
+    //     {class: "7th grade history", students: 20},
+    //     {class: "8th grade history", students: 22},
+    //     {class: "4th grade history", students: 30},
+    //     {class: "10th grade history", students: 25}
+    // ];
+    // //
     //
     // returnLargestStudentCount(classes) // returns 30
 
 
-    function returnLargestStudentCount(classes) {
-        let largestClass = 0;
-        for(let i = 0; i < classes.length; i++){
-            if(largestClass < classes[i].students) {
-                largestClass = classes[i].students;
-            }
-        }
-        return largestClass;
-    }
+    // function returnLargestStudentCount(classes) {
+    //     let largestClass = 0;
+    //     for (let i = 0; i < classes.length; i++) {
+    //         if (largestClass < classes[i].students) {
+    //             largestClass = classes[i].students;
+    //         }
+    //     }
+    //     return largestClass;
+    // }
+    //
+    // console.log(returnLargestStudentCount(classes), 30);
 
-    console.log(returnLargestStudentCount(classes), 30);
-
-    //     ================================= WARM UP
+    // ================================= WARM UP
     // 1. Create a function that prints 1 to 100.
     // function oneToOneHundred () {
     //     for(let i = 1; i <= 100; i++) {
@@ -471,21 +473,21 @@
     // numbers that are evenly divisible by 3, print 'fizz' and any numbers evenly divisible
     // by 5, print 'buzz'. For any numbers that are evenly divisible by 3 AND 5, print 'fizzbuzz'.
 
-    function fizzBuzz () {
-        for(let i = 1; i <= 100; i++) {
-            if((i % 3) === 0 && (i % 5) === 0) {
-                console.log('fizzbuzz');
-            } else if((i % 3) === 0){
-                console.log('fizz');
-            } else if((i % 5) === 0){
-                console.log('buzz');
-            } else {
-                console.log(i);
-            }
-        }
-    }
-
-    fizzBuzz();
+    // function fizzBuzz() {
+    //     for (let i = 1; i <= 100; i++) {
+    //         if ((i % 3) === 0 && (i % 5) === 0) {
+    //             console.log('fizzbuzz');
+    //         } else if ((i % 3) === 0) {
+    //             console.log('fizz');
+    //         } else if ((i % 5) === 0) {
+    //             console.log('buzz');
+    //         } else {
+    //             console.log(i);
+    //         }
+    //     }
+    // }
+    //
+    // fizzBuzz();
 
 
     /*
@@ -509,6 +511,77 @@
     etc...
 
     */
+
+    // ================================= WARM UP
+    // You are given an array of runner objects, where each object represents a
+    // runner with properties name, age, and lapTimes (in seconds). Write a
+    // function called getTopRunners that takes the runners array as input and
+    // returns an array of top runners. A runner is considered top if their
+    // average lap time is 50 seconds or faster. If there are no top runners in
+    // the input array, the function should return an empty array
+
+
+    // HINT: You might want to create a function called calculateLapTimeAverage
+    // that takes in an array of numbers and returns the average
+
+
+    // Input:
+    const runners = [
+        {name: "Alice", age: 25, lapTimes: [50.5, 45.2, 48.8, 47.1]},
+        {name: "Bob", age: 28, lapTimes: [55.2, 50.7, 53.3, 52.9]},
+        {name: "Charlie", age: 24, lapTimes: [48.9, 46.3, 50.1, 49.5]},
+        {name: "David", age: 27, lapTimes: [51.4, 50.2, 49.8, 52.3]},
+        {name: "Eve", age: 26, lapTimes: [47.7, 45.9, 46.6, 48.3]},
+    ];
+
+    // Expected Output:
+    // [
+    //     { name: 'Alice', age: 25, lapTimes: [50.5, 45.2, 48.8, 47.1] },
+    //     { name: 'Charlie', age: 24, lapTimes: [48.9, 46.3, 50.1, 49.5] },
+    //     { name: 'Eve', age: 26, lapTimes: [47.7, 45.9, 46.6, 48.3] }
+    // ]
+
+    function getTopRunners(runnersArray) {
+        let topRunners= [];
+
+        for(let runner of runnersArray) {
+            if(calculateLapTimeAverage(runner.lapTimes) <= 50){
+                // topRunners.push(runner);
+                const topRunner = {
+                    name: runner.name,
+                    age: runner.age
+                }
+
+                //bonus:
+                topRunners.push(topRunner);
+            }
+        }
+
+        return topRunners;
+    }
+
+    function calculateLapTimeAverage(lapTimesArray) {
+        let total = 0;
+        let count = 0;
+        for(let lapTime of lapTimesArray) {
+            total += lapTime;
+            count ++;
+        }
+        return total / count;
+    }
+
+    console.log(getTopRunners(runners));
+
+    // BONUS: Each runner in the resulting array should be represented as an
+    // object containing only the name and age properties.
+
+
+    // Expected Bonus Output:
+    //         [
+    //         { name: "Alice", age: 18 },
+    //             { name: "Charlie", age: 19 },
+    //             { name: "Eve", age: 17 }
+    //         ]
 </script>
 
 </body>

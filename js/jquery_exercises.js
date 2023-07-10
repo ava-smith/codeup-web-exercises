@@ -21,8 +21,7 @@ $(function () {
    // $('*').css('outline', '1px solid lightblue').css('font-weight', 'bold');
 
    //ID SELECTORS --
-   // let contents1 = $('#paragraph1').html();
-   // alert(contents1);
+   // alert($('#paragraph1').html());
    //
    // let contents2 = $('#paragraph2').html();
    // alert(contents2);
@@ -38,6 +37,31 @@ $(function () {
    // alert(contents);
 
    //MULTIPLE SELECTORS --
-   $('li, p, h1').css('background-color', 'pink');
+   // $('li, p, h1').css('background-color', 'pink');
 
+   //Add jQuery code that will change the background color of an h1 element when clicked.
+
+   function changeBackgroundColor() {
+      $(this).css('background-color', 'pink');
+   }
+
+   $('h1').on('click', changeBackgroundColor);
+
+   //Make all paragraphs have a font size of 18px when they are double clicked.
+   function changeFontSize() {
+      $('p').css('font-size', '18px');
+   }
+   $('p').on('dblclick', changeFontSize);
+
+   //Set all li text color to red when the mouse is hovering; reset to black when it is not.
+   function changeTextColor() {
+      $('li').css('color', 'red');
+   }
+   function changeTextColorToDefault() {
+      $('li').css('color', 'black');
+   }
+
+   $('li')
+       .on('mouseenter', changeTextColor)
+       .on('mouseleave', changeTextColorToDefault);
 })
