@@ -1,5 +1,7 @@
 $(() => {
 
+    // GLOBAL VARIABLES
+    const map = initializeMap();
     const favoriteRestaurants = [
         {
             "name": "Compadres Hill Country Cocina",
@@ -20,9 +22,8 @@ $(() => {
             "address": "16915 San Pedro Ave, Hollywood Park, TX 78232"
         }
     ]
-
-    // GLOBAL VARIABLES
-    const map = initializeMap();
+    const favRestaurantButton = document.querySelector('#geocode-button');
+    const favRestaurantsButton = document.querySelector('#mark-restaurants');
 
     // FUNCTIONS
 
@@ -73,15 +74,12 @@ $(() => {
     function showFavRestaurants() {
         favoriteRestaurants.forEach((favRestaurant) => {
             showFavRestaurant(favRestaurant);
-        })
+        });
     }
 
     // EVENTS
-    document.querySelector('#geocode-button').addEventListener('click', () => showFavRestaurant({address: '209 Lohmann St, Boerne, TX 78006', name: 'Compadres Hill Country Cocina'}));
-    document.querySelector('#mark-restaurants').addEventListener('click', showFavRestaurants);
-    // document.querySelector('#mark-restaurants').addEventListener('click', markRestaurants);
-
-
+    favRestaurantButton.addEventListener('click', () => showFavRestaurant({address: '209 Lohmann St, Boerne, TX 78006', name: 'Compadres Hill Country Cocina'}));
+    favRestaurantsButton.addEventListener('click', showFavRestaurants);
 
 
     // RUNS WHEN THE PROGRAM LOADS
