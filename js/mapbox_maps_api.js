@@ -4,24 +4,25 @@ $(() => {
         {
             "name": "Compadres Hill Country Cocina",
             "category": "Mexican",
-            "stars": "4.8"
+            "stars": "4.8",
+            "address": "209 Lohmann St, Boerne, TX 78006"
         },
         {
             "name": "CAVA",
             "category": "Mediterranean",
-            "stars": "4.5"
+            "stars": "4.5",
+            "address": "427 N Loop 1604 W Suite 210, San Antonio, TX 78232"
         },
         {
             "name": "Texas Roadhouse",
             "category": "Steakhouse",
-            "stars": "4.4"
+            "stars": "4.4",
+            "address": "16915 San Pedro Ave, Hollywood Park, TX 78232"
         }
     ]
 
     // GLOBAL VARIABLES
     const map = initializeMap();
-    // const marker = createMarker();
-    // const popup = createPopup();
 
     // FUNCTIONS
 
@@ -44,56 +45,46 @@ $(() => {
         geocode('Borne, Texas', MAPBOX_TOKEN).then((data) => {
             console.log(data);
             map.setCenter(data)
-                .setZoom(15)
+                .setZoom(9)
                 .setCenter([-98.73465, 29.79499])
         });
     }
 
-    // function that creates a marker at my favorite restaurant
-    // function createMarker() {
-    //     return new mapboxgl.Marker()
-    //         .setLngLat([-98.73465, 29.79499])
-    //         .addTo(map)
-    // }
-
-    // function that creates a popup
-    // function createPopup() {
-    //     return new mapboxgl.Popup()
-    //         .setLngLat([-98.73465, 29.79499])
-    //         .setHTML(`
-    //             <div>
-    //                 <h1>Compadres Hill Country Cocina</h1>
-    //                 <p>This place is a veteran friendly restaurant, serving up delicious Mexican food.</p>
-    //             </div>
-    //         `);
-    // }
-
-    function markRestaurant(restaurants) {
-        restaurants.forEach((restaurant) => {
-            geocode(`${restaurant.name}`, MAPBOX_TOKEN).then((data) => {
+    // function that centers the map on my fav restaurant
+    // zoom in
+    // create marker
+    function showFavRestaurant(favRestaurant) {
+        geocode(favRestaurant.address, MAPBOX_TOKEN)
+            .then((data) => {
                 console.log(data);
-                const restaurantPopup = new mapboxgl.Popup()
-                    .setHTML(`
-                        <h1>${restaurant.name}</h1>
-                        <p>${restaurant.category}</p>
-                        <p>${restaurant.stars}</p>
-                    `);
-                const restaurantMarker = new mapboxgl.Marker()
+                map.setCenter(data)
+                    .setZoom(15);
+                const marker = new mapboxgl.Marker()
                     .setLngLat(data)
-                    .addTo(map)
-                    .setPopup(restaurantPopup);
-                restaurantPopup.addTo(map);
-            })
+                    .addTo(map);
+                const popup = new mapboxgl.Popup()
+                    .setHTML(favRestaurant.name)
+                marker.setPopup(popup);
+            });
+    }
+
+    // function that shows the same thing as the above but with
+    // all the restaurants in my fav restaurants array
+    function showFavRestaurants() {
+        favoriteRestaurants.forEach((favRestaurant) => {
+            showFavRestaurant(favRestaurant);
         })
     }
 
     // EVENTS
-    document.querySelector('#geocode-button').addEventListener('click', goToRestaurant);
-    document.querySelector('#mark-restaurants').addEventListener('click', markRestaurant);
+    document.querySelector('#geocode-button').addEventListener('click', () => showFavRestaurant({address: '209 Lohmann St, Boerne, TX 78006', name: 'Compadres Hill Country Cocina'}));
+    document.querySelector('#mark-restaurants').addEventListener('click', showFavRestaurants);
+    // document.querySelector('#mark-restaurants').addEventListener('click', markRestaurants);
+
 
 
 
     // RUNS WHEN THE PROGRAM LOADS
-    // marker.setPopup(popup);
+    goToRestaurant();
 
 });

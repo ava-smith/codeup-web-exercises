@@ -61,35 +61,39 @@
 <script>
     (function () {
         "use strict";
+        //global variables
+        const productContainer = document.querySelector('#insertProducts');
+        const refreshButton = document.querySelector('#refresh-btn');
+
+
         // TODO: Create an AJAX GET request for the file under data/inventory.json
-        $.ajax('data/inventory.json').done((response) => {
-            console.log(response);
-            renderData(response);
-        })
-
-        function renderData(response) {
-            $('#insertProducts').empty();
-            for (let i = 0; i < response.length; i++) {
-                $('#insertProducts').append(`
-                <tr>
-                    <td>${response[i].title}</td>
-                    <td>${response[i].quantity}</td>
-                    <td>${response[i].price}</td>
-                    <td>${response[i].categories}</td>
-                </tr>
-                `)
-            }
-        }
-
-        function refresh() {
+        //functions
+        function loadInventory () {
             $.ajax('data/inventory.json').done((response) => {
                 console.log(response);
                 renderData(response);
             })
         }
-        $('#refresh-btn').click(function () {
-            refresh()
-        })
+
+        function renderData(response) {
+            productContainer.innerHTML= '';
+            for (let i = 0; i < response.length; i++) {
+                const tableRow = document.createElement('tr');
+                tableRow.innerHTML = `
+                    <td>${response[i].title}</td>
+                    <td>${response[i].quantity}</td>
+                    <td>${response[i].price}</td>
+                    <td>${response[i].categories.join(', ')}</td>
+                    `;
+                productContainer.appendChild(tableRow);
+            }
+        }
+
+        //runs when app loads
+        loadInventory();
+
+        //Event listeners
+        refreshButton.addEventListener('click', loadInventory)
 
         // TODO: Take the data from inventory.json and append it to the products table
         //       HINT: Your data should come back as a JSON object; use console.log() to inspect
