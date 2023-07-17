@@ -11,12 +11,29 @@
 
     <script src='https://api.mapbox.com/mapbox-gl-js/v2.15.0/mapbox-gl.js'></script>
     <link href='https://api.mapbox.com/mapbox-gl-js/v2.15.0/mapbox-gl.css' rel='stylesheet'/>
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/resets.css">
+    <link rel="stylesheet" href="css/weather_map.css">
 </head>
 <body>
-
-
-<div id="map" style="height: 20rem; width: 20rem;"></div>
-
+<div class="page-wrapper">
+    <header class="row">
+        <h1>Weather Map</h1>
+    </header>
+    <main>
+        <div class="container">
+            <div class="row" id="map" style="height: 20rem; width: 50rem;"></div>
+            <div class="search-area row">
+                <input type="text" placeholder="Search by city">
+                <button id="search-button">Search</button>
+            </div>
+        </div>
+        <div class="weather-cards container">
+            <div class="temps row justify-space-between"></div>
+            <div class="forecast row justify-space-between"></div>
+        </div>
+    </main>
+</div>
 <script src="js/min-max-temps.js"></script>
 <script src="https://code.jquery.com/jquery-2.2.4.min.js"
         integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="

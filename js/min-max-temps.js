@@ -35,7 +35,7 @@ function returnMinMaxTemps({list}) {
         }
     });
 
-    return minMaxTempDays;
+    return minMaxTempDays.slice(0, 5);
 }
 
 /*
