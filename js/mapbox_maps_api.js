@@ -69,6 +69,7 @@ $(() => {
             });
     }
 
+
     // function that shows the same thing as the above but with
     // all the restaurants in my fav restaurants array
     function showFavRestaurants() {

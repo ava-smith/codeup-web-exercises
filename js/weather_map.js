@@ -31,7 +31,7 @@ $(() => {
     // calls the weather api to get information on the weather
 
     $.ajax(URL).done(data => {
-        console.log(data.list[0]);
+        // console.log(data.list[0]);
         // console.log(returnMinMaxTemps(data));
         let tempsData = returnMinMaxTemps(data);
         displayTemps(tempsData);
@@ -45,9 +45,11 @@ $(() => {
         for(let i = 0; i < minMaxTemps.length; i++){
             const topWeatherCard = document.createElement('div');
             topWeatherCard.innerHTML = `
-                <p>Date: ${minMaxTemps[i].date}</p>
-                <p>Min Temp: ${minMaxTemps[i].min}</p>
-                <p>Max Temp: ${minMaxTemps[i].max}</p>
+                <div class="top-card">
+                    <p>Date: ${minMaxTemps[i].date}</p>
+                    <p>${minMaxTemps[i].min}°</p>
+                    <p class="top">${minMaxTemps[i].max}°</p>
+                </div>
             `;
             tempsContainer.appendChild(topWeatherCard);
         }
@@ -59,9 +61,11 @@ $(() => {
         for(let i = 0; i < weatherArray.length; i += 8) {
             const bottomWeatherCard = document.createElement('div');
             bottomWeatherCard.innerHTML = `
-                <p>Feels Like: ${weatherArray[i].main.feels_like}</p>
-                <p>${weatherArray[i].weather[0].description}</p>
-                <p>Humidity: ${weatherArray[i].main.humidity}</p>
+                <div class="bottom-card">
+                    <p>Feels Like: ${weatherArray[i].main.feels_like}°</p>
+                    <p>${weatherArray[i].weather[0].description}</p>
+                    <p>Humidity: ${weatherArray[i].main.humidity}</p>
+                </div>
             `;
             forecastContainer.appendChild(bottomWeatherCard);
         }
