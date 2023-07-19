@@ -53,7 +53,6 @@ $(() => {
         navbarContainer.appendChild(cityCard);
     }
 
-
 // function that renders the min and max temps and the date
     function displayTemps(minMaxTemps) {
         tempsContainer.innerHTML = '';
