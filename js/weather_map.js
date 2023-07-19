@@ -48,7 +48,7 @@ $(() => {
         const cityCard = document.createElement('div');
         cityCard.innerHTML = `
                 <h1>Weather Map</h1>
-                <p>Current city: ${weatherData.city.name}</p>
+                <p>Current location: ${weatherData.city.name}</p>
             `;
         navbarContainer.appendChild(cityCard);
     }
