@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DOM Warmups</title>
+</head>
+<body>
+
+<h1>1.) Change background color to fav color</h1>
+<button>Change Color</button>
+
+<script
+        src="https://code.jquery.com/jquery-2.2.4.min.js"
+        integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
+        crossorigin="anonymous"></script>
+<script>
+    "use strict";
+
+    $('button').on('click', () => {
+        $('body').css('background-color', 'orange')
+    });
+</script>
+</body>
+</html>
