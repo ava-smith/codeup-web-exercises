@@ -54,14 +54,12 @@
     // });
 
     // javascript ==============================================
-    // const addBtn = document.querySelector('#add-btn');
-    // const numberInput = document.querySelector('#number');
-    // const sumOutput = document.querySelector('#sum-output');
-    //
-    // addBtn.addEventListener('click', () => {
-    //     let userNum = numberInput.value();
-    //     sumOutput.innerHTML = userNum;
-    // });
+    document.querySelector('#add-btn').addEventListener('click', () => {
+        const input = document.querySelector('#number').value;
+        const output = document.querySelector('#sum-output').innerText;
+        const total = parseInt(input) + parseInt(output);
+        document.querySelector('#sum-output').innerText = total;
+    });
 </script>
 </body>
 </html>
