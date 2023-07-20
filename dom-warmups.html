@@ -7,7 +7,14 @@
 <body>
 
 <h1>1.) Change background color to fav color</h1>
-<button>Change Color</button>
+<button id="change-color">Change Color</button>
+
+<h1>2.) </h1>
+<h3>The sum is: <span id="sum-output">0</span></h3>
+
+<label for="number">Number</label>
+<input id="number" type="number" name="number" min="0" max="5" value="0">
+<button id="add-btn">Add</button>
 
 <script
         src="https://code.jquery.com/jquery-2.2.4.min.js"
@@ -17,13 +24,13 @@
     "use strict";
 
     // DOM Warm Up
-    //
+    // TODO:
     // 1. create a file called `dom-warmups.html` (add script tags and jQuery)
     // 2. add a button to the html
     // 3. when the button is clicked, change the background color of the page to your favorite color
 
     // jQuery ==================================================
-    $('button').on('click', () => {
+    $("#change-color").on('click', () => {
         $('body').css('background-color', 'pink')
     });
 
@@ -33,7 +40,26 @@
     //
     // changeColorBtn.addEventListener('click', () => {
     //     body.style.background = 'pink';
-    // })
+    // });
+
+    // DOM Warm Up
+    // TODO: add the needed JS so that the number selected in the number input will be added to the number in the span when the button is clicked
+
+    // jQuery ==================================================
+    $('#add-btn').on('click', () => {
+        const userNum = $('#number').val();
+        $('#sum-output').html(userNum);
+    });
+
+    // javascript ==============================================
+    // const addBtn = document.querySelector('#add-btn');
+    // const numberInput = document.querySelector('#number');
+    // const sumOutput = document.querySelector('#sum-output');
+    //
+    // addBtn.addEventListener('click', () => {
+    //     let userNum = numberInput.value();
+    //     sumOutput.innerHTML = userNum;
+    // });
 </script>
 </body>
 </html>
