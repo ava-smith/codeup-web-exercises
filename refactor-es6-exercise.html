@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Online Store</title>
+</head>
+<body>
+
+<h1>My Tool Store</h1>
+
+<table id="products">
+  <thead>
+  <tr>
+    <th>Title</th>
+    <th>Quantity</th>
+    <th>Price</th>
+    <th>Categories</th>
+  </tr>
+  </thead>
+  <tbody id="insertProducts"></tbody>
+</table>
+<button>Reload Inventory</button>
+
+<script src="js/jquery-3.6.0.js"></script>
+<script>
+
+  // TODO: refactor the following AJAX Store code to use ES6 syntax
+  (function() {
+    "use strict";
+
+    $.get("/data/inventory.json").done(function(data){
+      console.log(data);
+    });
+
+
+    function loadInventory(){
+      $.get("/data/inventory.json").done(function(data){
+        $("#insertProducts").html("");
+        data.forEach(function({title, quantity, price, categories}){
+          $("#insertProducts").append(`
+                  <tr>
+                    <td>${title}</td>
+                    <td>${quantity}</td>
+                    <td>${price}</td>
+                    <td>${categories.join(", ")}</td>
+                  </tr>
+           `);
+        })
+      });
+    }
+
+    loadInventory();
+
+    $("button").on('click', function(){
+      loadInventory();
+    });
+  })();
+</script>
+
+</body>
+</html>
