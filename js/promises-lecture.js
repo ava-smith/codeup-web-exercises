@@ -16,7 +16,6 @@ const getPerson = (id = 1) => {
 }
 
 const getFilm = (url) => {
-    const filmUrl = url;
     const options = {
         method: "GET",
         headers: {
