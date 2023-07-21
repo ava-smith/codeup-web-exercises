@@ -1,5 +1,5 @@
-const getUserName = () => {
-    const url = `https://api.github.com/users/ava-smith/events`;
+const getEvents = (userName) => {
+    const url = `https://api.github.com/users/${userName}/events`;
     const options = {
         method: "GET",
         headers: {
@@ -11,15 +11,18 @@ const getUserName = () => {
         .then((response) => {
             return response.json();
         })
-        // .then((data) => {
-        //     console.log(data);
-        // });
+        .catch(error => {
+            console.log(error);
+        })
     }
 
 (() => {
-    getUserName().then((data) => {
-        console.log(data);
-        console.log(data[0].created_at);
+    getEvents("ava-smith").then((events) => {
+        console.log(events);
+        const pushEvents = events.filter(event => {
+            return event.type ==="PushEvent";
+        });
+        console.log(pushEvents[0].created_at);
     });
 
 })();
