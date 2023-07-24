@@ -41,10 +41,49 @@ const getFilm = async (url) => {
     }
 }
 
-(async ()=>{
-    const luke = await getPerson(1);
-    console.log(luke);
+const getPeople = async () => {
+    const url = 'https://swapi.dev/api/people/';
+    const options = {
+        method: 'GET',
+        header: {
+            'Content-Type': 'application/json'
+        }
+    }
+    const response = await fetch(url, options);
+    const people = await response.json();
+    return people;
+}
 
-    const firstFilm = await getFilm("https://swapi.dev/api/films/1/");
-    console.log(firstFilm);
+(async ()=>{
+    const results = await getPeople();
+    // console.log(results);
+    const people = results.results;
+    console.log('Just the people =>', people);
+    const peopleRows = people.map((person) => {
+        const row = document.createElement('tr');
+        row.innerHTML = `
+            <td>
+                <div class="d-flex gap-10 align-center">
+                    <img class="character-image" src ="#">
+                    <p class="character-name">${person.name}</p>
+                </div>
+            </td>
+            <td>${person.height}</td>
+            <td>${person.mass}</td>
+            <td>${person.hair_color}</td>
+            <td>${person.skin_color}</td>
+            <td>${person.eye_color}</td>
+            <td>${person.birth_year}</td>
+            <td>${person.gender}</td>
+        `
+        let button = row.querySelector('button');
+        button.addEventListener('click', () => {
+            row.remove();
+        });
+        return row;
+    });
+    for(let person of peopleRows) {
+        document.querySelector('#characters tbody').appendChild(person);
+    }
+
 })();
